@@ -8,17 +8,21 @@ The aim of this script is to find a qucik, easy and flexible way to upload to yo
 
 **import the package**
 from gsheet import google_df
+<br />
 
 **initialise the package**
 sess = google_df()
+<br />
 
 **get all the spreadsheet names**
 sess.get_all_name()
 
 default setting: verbose = 'name', show = 10
 
+
 __get name and id__ 
 sess.get_all_name(verbose = 'both)
+
 
 __show 50 spreadsheets__ 
 sess.get_all_name(show=50)
@@ -27,6 +31,7 @@ sess.get_all_name(show=50)
 sess.df2sheet('spreadsheet_name', 'tab_name', 'df_name')
 
 if tab_name doesn't exist, it will create the tab with the tab_name in the spreadsheet.
+
 
 **download google_sheet and load as df**
 df = sess.sheet2df('spreadsheet_name', 'tab_name')
