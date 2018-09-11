@@ -18,11 +18,11 @@ sess.get_all_name()
 default setting: verbose = 'name', show = 10
 
 
-__get name and id__ <br><br>
+_get name and id_<br><br>
 sess.get_all_name(verbose = 'both)
 
 
-__show 50 spreadsheets__ <br><br>
+_show 50 spreadsheets_ <br><br>
 sess.get_all_name(show=50)
 
 
