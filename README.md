@@ -6,32 +6,31 @@ The aim of this script is to find a qucik, easy and flexible way to upload to yo
 
 ## examples
 
-**import the package**
-from gsheet import google_df
-<br />
+### import the package
+from gsheet import google_df  
 
-**initialise the package**
+### initialise the package
 sess = google_df()
-<br />
 
-**get all the spreadsheet names**
+### get all the spreadsheet names
 sess.get_all_name()
 
 default setting: verbose = 'name', show = 10
 
 
-__get name and id__ 
+__get name and id__ <br><br>
 sess.get_all_name(verbose = 'both)
 
 
-__show 50 spreadsheets__ 
+__show 50 spreadsheets__ <br><br>
 sess.get_all_name(show=50)
 
-**upload df to google_sheet**
+
+### upload df to google_sheet
 sess.df2sheet('spreadsheet_name', 'tab_name', 'df_name')
+
 
 if tab_name doesn't exist, it will create the tab with the tab_name in the spreadsheet.
 
-
-**download google_sheet and load as df**
+### download google_sheet and load as df
 df = sess.sheet2df('spreadsheet_name', 'tab_name')
