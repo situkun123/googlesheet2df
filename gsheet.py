@@ -3,6 +3,8 @@ import pandas as pd
 from oauth2client.service_account import ServiceAccountCredentials
 import pygsheets
 
+__version__ = "0.1"
+
 # change this client_secret to your client secret(Keep it safe), which can be obtained google API wesite.
 # And there are a lot of tutorial for this part.
 client_secret = /dir1/dir2/your_client_secret.json
