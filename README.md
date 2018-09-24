@@ -10,6 +10,27 @@ The aim of this script is to find a qucik, easy and flexible way to upload dataf
 * [google_sheets api](https://developers.google.com/sheets/api/)
 * [google_drive api](https://developers.google.com/drive/)
 <br>__Obtain OAuth2 credentials from Google Developers Console for google spreadsheet api and drive api and save the file as client_secret.json__
+```
+access_token: "jvhhvoblkn;mnobnnomnp;"
+client_id: "vivuivbiubuobobuvi.apps.googleusercontent.com"
+client_secret: "vgkgk-kjbjkbk-jhjkbkbjk"
+refresh_token: "knlflknlknl"
+token_expiry: "2018-09-24T18:33:15Z"
+token_uri: "https://www.googleapis.com/oauth2/v3/token"
+user_agent: "pygsheets"
+revoke_uri: "https://accounts.google.com/o/oauth2/revoke"
+id_token: null
+id_token_jwt: null
+access_token: "yfdjkhfgjfgdljfgdlkjfjnlcfjkl"
+expires_in: 3600
+refresh_token: "fdjkhfdgjklfdglkjfgdl;k"
+scope: "https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/drive"
+token_type: "Bearer"
+token_info_uri: "https://www.googleapis.com/oauth2/v3/tokeninfo"
+invalid: false
+_class: "OAuth2Credentials"
+_module: "oauth2client.client"
+```
 ## exception
 - Error will occur when headers are the same, make sure all headers are unique
 ## examples
