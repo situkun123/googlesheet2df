@@ -4,8 +4,14 @@ A extremely light wrapper around **pygsheets** to obtain google sheet as a dataf
 ## script aim
 The aim of this script is to find a qucik, easy and flexible way to upload to your desirable google sheet and transform google sheet into dataframe, so you don't need to import csv anymore.
 
-## __exception__
-- Error will occur when headers are the same, make sure the each header is unique
+## requirement
+* [pygsheets](https://github.com/nithinmurali/pygsheets) - The core package powering this wrapper
+<br>__following the link for installation__
+* [google_sheets api](https://developers.google.com/sheets/api/)
+* [google_drive api](https://developers.google.com/drive/)
+<br>__Obtain OAuth2 credentials from Google Developers Console for google spreadsheet api and drive api and save the file as client_secret.json__
+## exception
+- Error will occur when headers are the same, make sure all headers are unique
 ## examples
 
 ### import the package and create session
