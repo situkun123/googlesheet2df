@@ -1,9 +1,11 @@
 # googlesheet2df
-A extremely light wrapper around **pygsheets** to obtain google sheet as a dataframe and upload dataframes to a google sheet
+A extremely light wrapper around **pygsheets** to obtain google sheet as a dataframe and upload dataframes to a google sheet 
 
 ## script aim
 The aim of this script is to find a qucik, easy and flexible way to upload to your desirable google sheet and transform google sheet into dataframe, so you don't need to import csv anymore.
 
+##__exception__
+- Error will occur when headers are the same, make sure the each header is unique
 ## examples
 
 ### import the package
