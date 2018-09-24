@@ -6,10 +6,10 @@ The aim of this script is to find a qucik, easy and flexible way to upload dataf
 
 ## requirement
 * [pygsheets](https://github.com/nithinmurali/pygsheets) - The core package powering this wrapper
-<br>__following the link for installation__
+<br>following the link for installation
 * [google_sheets api](https://developers.google.com/sheets/api/)
 * [google_drive api](https://developers.google.com/drive/)
-<br>__Obtain OAuth2 credentials from Google Developers Console for google spreadsheet api and drive api and save the file as client_secret.json__
+<br>Obtain ***OAuth2 credentials*** from Google Developers Console for google spreadsheet api and drive api and save the file as client_secret.json
 ### client_secret.json should look something like this 
 ```
 access_token: "jvhhvoblkn;mnobnnomnp;"
