@@ -10,6 +10,7 @@ The aim of this script is to find a qucik, easy and flexible way to upload dataf
 * [google_sheets api](https://developers.google.com/sheets/api/)
 * [google_drive api](https://developers.google.com/drive/)
 <br>__Obtain OAuth2 credentials from Google Developers Console for google spreadsheet api and drive api and save the file as client_secret.json__
+### client_secret.json should look something like this 
 ```
 access_token: "jvhhvoblkn;mnobnnomnp;"
 client_id: "vivuivbiubuobobuvi.apps.googleusercontent.com"
