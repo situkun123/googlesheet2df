@@ -2,7 +2,7 @@
 A extremely light wrapper around **pygsheets** to obtain google sheet as a dataframe and upload dataframes to a google sheet 
 
 ## script aim
-The aim of this script is to find a qucik, easy and flexible way to upload dataframe to your desirable google sheet and transform google sheet into dataframe, so you don't need to import csv anymore.
+The aim of this script is to find a qucik, easy and flexible way to upload dataframes to your desirable google sheet and transform google sheet into dataframe, so you don't need to import csv anymore.
 
 ## requirement
 * [pygsheets](https://github.com/nithinmurali/pygsheets) - The core package powering this wrapper
@@ -19,6 +19,8 @@ The aim of this script is to find a qucik, easy and flexible way to upload dataf
 from gsheet import google_df
 sess = google_df()
 ```
+- google will ask you to authorise your account when you initialise the session for the first time.
+- Then it will save a copy of client_secret.json in the working directory
 
 ### get all the spreadsheet names
 ```
