@@ -44,6 +44,7 @@ sess.df2sheet('spreadsheet_name', 'tab_name', 'df_name')
 ```
 
 - **if tab_name doesn't exist, it will create the tab with the tab_name in the spreadsheet.**
+- **be careful when you replace existing tab, it is irreversible once this operation is finished
 
 ### download google_sheet and load as df
 ```
