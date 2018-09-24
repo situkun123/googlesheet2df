@@ -4,7 +4,7 @@ A extremely light wrapper around **pygsheets** to obtain google sheet as a dataf
 ## script aim
 The aim of this script is to find a qucik, easy and flexible way to upload to your desirable google sheet and transform google sheet into dataframe, so you don't need to import csv anymore.
 
-##__exception__
+## __exception__
 - Error will occur when headers are the same, make sure the each header is unique
 ## examples
 
