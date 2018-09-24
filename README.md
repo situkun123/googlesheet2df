@@ -2,7 +2,7 @@
 A extremely light wrapper around **pygsheets** to obtain google sheet as a dataframe and upload dataframes to a google sheet 
 
 ## script aim
-The aim of this script is to find a qucik, easy and flexible way to upload to your desirable google sheet and transform google sheet into dataframe, so you don't need to import csv anymore.
+The aim of this script is to find a qucik, easy and flexible way to upload dataframe to your desirable google sheet and transform google sheet into dataframe, so you don't need to import csv anymore.
 
 ## requirement
 * [pygsheets](https://github.com/nithinmurali/pygsheets) - The core package powering this wrapper
