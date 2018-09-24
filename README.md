@@ -10,6 +10,11 @@ The aim of this script is to find a qucik, easy and flexible way to upload dataf
 * [google_sheets api](https://developers.google.com/sheets/api/)
 * [google_drive api](https://developers.google.com/drive/)
 <br>Obtain ***OAuth2 credentials*** from Google Developers Console for google spreadsheet api and drive api and save the file as client_secret.json
+## set up in the __gsheet.py__
+```
+client_secret = /dir1/dir2/your_client_secret.json
+```
+- chnage client_secret to where you saved the json file
 ### client_secret.json should look something like this 
 ```
 access_token: "jvhhvoblkn;mnobnnomnp;"
