@@ -3,7 +3,7 @@ import pandas as pd
 from oauth2client.service_account import ServiceAccountCredentials
 import pygsheets
 
-__version__ = "0.1"
+__version__ = "0.1.1"
 
 # change this client_secret to your client secret(Keep it safe), which can be obtained google API wesite.
 # And there are a lot of tutorial for this part.
@@ -27,9 +27,10 @@ class google_df(object):
         else: raise Exception('verbose error')
 
     def get_all_sheetname(self, filename):
-        file1 = self.ps.open(filename)
-        print('All the sheets in the workbook: {}'\
-             .format(file1.worksheets()))
+        file1 = self.ps.open(filename).worksheets()
+        for a, b in enumerate(file1):
+            print(f'{a+1} Name: {b.title}')
+            
 
     def create_spreadsheet(self, filename, edit = False):
         # Use for create a workbook
