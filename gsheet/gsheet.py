@@ -35,8 +35,10 @@ class google_df(object):
 
     def get_all_sheetname(self, filename):
         file1 = self.ps.open(filename).worksheets()
+        sheets = []
         for a, b in enumerate(file1):
-            print(f'{a+1} Name: {b.title}')
+            sheets.append((f'{a+1} Name: {b.title}'))
+        return sheets
             
 
     def create_spreadsheet(self, filename, edit = False):
