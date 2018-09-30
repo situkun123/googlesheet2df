@@ -17,6 +17,7 @@ class google_df(object):
         info = self.ps.list_ssheets()
         self.sheetlist = list(map(lambda x: x['name'], info))
         self.sheetlist_id = list(map(lambda x: (x['name'], x['id']), info))
+        self.team = []
         
     def get_all_name(self, verbose = 'name', show = 10):
         separator = '-'*20
@@ -59,10 +60,17 @@ class google_df(object):
     
     def sheet2df(self, filename, sheetname):
         # get as a dataframe from sheet
-        gsheet = self.open_spreadsheet(filename, show=False).worksheet_by_title(sheetname)
-        df_NaN = gsheet.get_as_df().replace(r'^\s*$', np.nan, regex=True)
-        df_NaN = df_NaN[[i for i in df_NaN.columns if i !='']]
-        return df_NaN
+        if filename not in self.sheetlist:
+            print(f'{filename} do not exist')
+        elif filename in self.sheetlist:
+            sheets = [i[8:] for i in self.get_all_sheetname(filename)]
+            if sheetname not in sheets:
+                print(f'{sheetname} do not exist')
+            else:
+                gsheet = self.open_spreadsheet(filename, show=False).worksheet_by_title(sheetname)
+                df_NaN = gsheet.get_as_df().replace(r'^\s*$', np.nan, regex=True)
+                df_NaN = df_NaN[[i for i in df_NaN.columns if i !='']]
+                return df_NaN
 
     def df2sheet(self, filename, sheetname, df):
         # upload a dataframe to googlesheet
@@ -78,3 +86,12 @@ class google_df(object):
             gsheet.add_worksheet(sheetname)\
             .set_dataframe(df_no_NaN, (1,1), fit=True)
             print('The sheetname does not exist, but created, update sucessfully!')
+            
+     def share(self, filename, name = self.team):
+        ''' name must be a list
+            default is sharing with everyone in the data team. '''
+        name2 = [i+'@gmail.com' for i in name]
+        for i in name2:
+            self.ps.open(filename).share(i)
+            print(f'Sucessfully shared with {i}')
+        print('sharing completed!')
