@@ -3,7 +3,7 @@ import pandas as pd
 from oauth2client.service_account import ServiceAccountCredentials
 import pygsheets
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 
 # change this client_secret to your client secret(Keep it safe), which can be obtained google API wesite.
 # And there are a lot of tutorial for this part.
@@ -60,6 +60,13 @@ class google_df(object):
             return print(f'sheet: {sheetname} is added/n rows = {row}/n col = {col}')
         return file1
     
+    def str_detect(self, df):
+        '''change column type to string!'''
+        time_series = [i for i in df.columns if df[i].dtypes == np.dtype('datetime64[ns]')]
+        for i in time_series:
+            df[i] = df[i].astype(str)
+        return df
+    
     def sheet2df(self, filename, sheetname):
         # get as a dataframe from sheet
         if filename not in self.sheetlist:
@@ -76,6 +83,7 @@ class google_df(object):
 
     def df2sheet(self, filename, sheetname, df):
         # upload a dataframe to googlesheet
+        df = self.str_detect(df)
         gsheet = self.open_spreadsheet(filename, show=False)
         allsheet = [str(i)[12:-10] for i in gsheet.worksheets()]
         df_no_NaN = df.fillna('', axis=1)
