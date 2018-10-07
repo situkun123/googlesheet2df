@@ -60,6 +60,13 @@ class google_df(object):
             return print(f'sheet: {sheetname} is added/n rows = {row}/n col = {col}')
         return file1
     
+    def delete_spreadSheet(self, filename):
+        if filename in self.sheetlist:
+            self.ps.delete(title = filename)
+        else: 
+            print(f'{filename} do not exist')
+
+    
     def str_detect(self, df):
         '''change column type to string!'''
         time_series = [i for i in df.columns if df[i].dtypes == np.dtype('datetime64[ns]')]
