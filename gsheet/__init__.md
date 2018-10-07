@@ -6,6 +6,9 @@ Version history
 **changes**
 - **df2sheet** now can uplaod df with datetime dtype columns
 
+**new**
+- **delete_spreadSheet** method added
+
 ### up to V 0.1.2
 **changes**
 - Change print statement to f-string
