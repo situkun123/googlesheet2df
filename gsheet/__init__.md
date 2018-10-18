@@ -4,7 +4,7 @@ __version__ = 0.1.4
 Version history 
 ### V 0.1.4
 **new**
-- add method to save downloaded dataframe to pickle file
+- add method to save downloaded dataframe as pickle file
 
 ### V 0.1.3
 **changes**
