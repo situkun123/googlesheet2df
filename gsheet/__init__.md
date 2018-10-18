@@ -1,5 +1,5 @@
 ## Current version
-__version__ = 0.1.3
+__version__ = 0.1.4
 
 Version history 
 ### V 0.1.4
