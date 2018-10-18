@@ -3,7 +3,7 @@ import pandas as pd
 from oauth2client.service_account import ServiceAccountCredentials
 import pygsheets
 
-__version__ = "0.1.3"
+__version__ = "0.1.4"
 
 # change this client_secret to your client secret(Keep it safe), which can be obtained google API wesite.
 # And there are a lot of tutorial for this part.
@@ -74,18 +74,34 @@ class google_df(object):
             df[i] = df[i].astype(str)
         return df
     
-    def sheet2df(self, filename, sheetname):
+               
+    def sheet2df(self, filename, sheetname, as_pickle = False):
         # get as a dataframe from sheet
         if filename not in self.sheetlist:
             print(f'{filename} do not exist')
         elif filename in self.sheetlist:
             sheets = [i[8:] for i in self.get_all_sheetname(filename)]
+            
             if sheetname not in sheets:
-                print(f'{sheetname} do not exist')
+               print(f'{sheetname} do not exist')
+                     
             else:
                 gsheet = self.open_spreadsheet(filename, show=False).worksheet_by_title(sheetname)
                 df_NaN = gsheet.get_as_df().replace(r'^\s*$', np.nan, regex=True)
                 df_NaN = df_NaN[[i for i in df_NaN.columns if i !='']]
+                     
+                if as_pickle == True:
+                    pi_path = os.path.join(os.getcwd(), 'pickle_data')
+                     
+                    if os.path.exists(pi_path) == False:
+                        os.mkdir(pi_path)
+                    else:
+                        print(f'{pi_path} already existed!!')
+                    filename2 = re.sub('[\s/]*', '', filename)
+                    sheetname2 = re.sub('[\s/]*', '', sheetname)
+                    df_NaN.to_pickle(f"pickle_data/{sheetname2}-{filename2}.pkl")
+                else: 
+                     pass
                 return df_NaN
 
     def df2sheet(self, filename, sheetname, df):
