@@ -1,7 +1,11 @@
 ## Current version
-__version__ = 0.1.2
+__version__ = 0.1.3
 
 Version history 
+### V 0.1.4
+**new**
+- add method to save downloaded dataframe to pickle file
+
 ### V 0.1.3
 **changes**
 - **df2sheet** now can uplaod df with datetime dtype columns
