@@ -18,7 +18,7 @@ class google_df(object):
         self.sheetlist = list(map(lambda x: x['name'], info))
         self.sheetlist_id = list(map(lambda x: (x['name'], x['id']), info))
         self.team = []
-        
+         
     def get_all_name(self, verbose = 'name', show = 10):
         separator = '-'*20
         # get all the spreadsheet name and ID
